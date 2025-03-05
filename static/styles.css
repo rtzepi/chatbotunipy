@@ -1,0 +1,133 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2E3440; /* Fondo gris oscuro */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Contenedor del Chatbot */
+.chat-container {
+    background-color: #3B4252; /* Fondo gris más claro */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 400px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Encabezado del Chatbot */
+.chat-header {
+    background-color: #6D5ACF; /* Morado */
+    color: #ffffff; /* Blanco */
+    padding: 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+}
+
+.chat-header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+/* Área de Mensajes */
+.chat-box {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto; /* Hace que el área sea scrolleable */
+    background-color: #434C5E; /* Fondo gris oscuro */
+    max-height: 400px; /* Altura máxima para forzar el scroll */
+}
+
+/* Estilos para la barra de desplazamiento */
+.chat-box::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra de desplazamiento */
+}
+
+.chat-box::-webkit-scrollbar-track {
+    background: #3B4252; /* Fondo de la barra de desplazamiento */
+    border-radius: 4px;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+    background: #6D5ACF; /* Color del "pulgarcito" de la barra */
+    border-radius: 4px;
+}
+
+.chat-box::-webkit-scrollbar-thumb:hover {
+    background: #7C6FCF; /* Color del "pulgarcito" al pasar el mouse */
+}
+
+/* Animación para los mensajes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos de los Mensajes */
+.message {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 80%;
+    animation: fadeIn 0.3s ease-in-out; /* Aplicar animación */
+}
+
+.user-message {
+    background-color: #6D5ACF; /* Morado */
+    color: #ffffff; /* Blanco */
+    margin-left: auto; /* Alinea a la derecha */
+}
+
+.bot-message {
+    background-color: #4C566A; /* Gris oscuro */
+    color: #ECEFF4; /* Blanco */
+    margin-right: auto; /* Alinea a la izquierda */
+}
+
+/* Barra de Entrada de Texto */
+.chat-input {
+    display: flex;
+    padding: 10px;
+    background-color: #3B4252; /* Fondo gris más claro */
+    border-top: 1px solid #4C566A; /* Borde gris oscuro */
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #4C566A; /* Borde gris oscuro */
+    border-radius: 5px;
+    margin-right: 10px;
+    background-color: #434C5E; /* Fondo gris oscuro */
+    color: #ECEFF4; /* Blanco */
+}
+
+.chat-input input::placeholder {
+    color: #81A1C1; /* Gris claro para el placeholder */
+}
+
+.chat-input button {
+    padding: 10px 20px;
+    background-color: #6D5ACF; /* Morado */
+    color: #ffffff; /* Blanco */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.chat-input button:hover {
+    background-color: #7C6FCF; /* Morado claro */
+}

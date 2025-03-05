@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Universitario</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Encabezado del Chatbot -->
+        <div class="chat-header">
+            <h1>Chatbot Universitario</h1>
+        </div>
+
+        <!-- Área de Mensajes -->
+        <div class="chat-box" id="chat-box">
+            {% for remitente, mensaje in historial %}
+                <div class="message {% if remitente == 'Tú' %}user-message{% else %}bot-message{% endif %}">
+                    <strong>{{ remitente }}:</strong> {{ mensaje }}
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- Barra de Entrada de Texto -->
+        <form method="POST" class="chat-input">
+            <input type="text" name="mensaje" placeholder="Escribe tu mensaje..." required>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <!-- Script para desplazamiento automático -->
+    <script>
+        const chatBox = document.getElementById("chat-box");
+        chatBox.scrollTop = chatBox.scrollHeight;
+    </script>
+</body>
+</html>

@@ -3,3 +3,4 @@ numpy
 requests
 psycopg2
 Pillow
+gunicorn==21.2.0

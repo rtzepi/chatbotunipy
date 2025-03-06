@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify, render_template, session
 from chatbot import Chatbot
 
 app = Flask(__name__)
-app.secret_key = "tu_clave_secreta_aqui"  # Clave secreta para las sesiones
+app.secret_key = "clavesecreta_aqui"  # Clave secreta para las sesiones
 
 @app.route("/", methods=["GET", "POST"])
 def chat():
